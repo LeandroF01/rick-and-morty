@@ -1,0 +1,196 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;800&display=swap");
+:root {
+  --cl-card: rgb(51, 71, 86);
+  --cl-card__text-span: rgb(127, 132, 135);
+  --cl-card__text: rgb(216, 233, 168);
+  --cl-backgroud: rgb(44, 54, 57);
+
+  --cl-location__text: rgb(232, 249, 253);
+  --bx-location: rgba(0, 0, 0, 0.2);
+  --bx-location-2: rgba(0, 0, 0, 0.116);
+  --bx-location-sh: rgba(255, 255, 255, 0.155);
+
+  --cl-circle-alive: rgb(73, 255, 0);
+  --cl-circle-dead: rgb(255, 0, 0);
+  --cl-circle-unknown: rgb(119, 125, 111);
+
+  --cl-buttom: rgb(149, 205, 65);
+
+  --cl-buttom-pag: rgb(64, 181, 203);
+  --cl-buttom-pag-focus: rgb(192, 223, 64);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  font-family: "Open Sans", sans-serif;
+  background: var(--cl-backgroud);
+}
+
+ul,
+li {
+  list-style: none;
+  padding-left: 0;
+}
+.App {
+  width: 100%;
+}
+.image-title {
+  position: absolute;
+  top: 2%;
+  left: 2%;
+  width: 35em;
+  animation-name: move;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+/*<-- Location -->*/
+.location-info {
+  box-shadow: 0 0 1rem 0 var(--bx-location-2);
+  background: var(--bx-location-sh);
+  border-radius: 0.25em;
+  padding: 1em;
+}
+@keyframes move {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(20%);
+  }
+}
+
+.container___card-location {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  box-shadow: 0 0 1rem 0 var(--bx-location);
+  border-radius: 5px;
+  overflow: hidden;
+  color: var(--cl-location__text);
+  background-color: var(--bx-location-sh);
+  backdrop-filter: blur(5px);
+  max-width: 90em;
+  margin: auto;
+  padding: 0;
+}
+.location-content {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  gap: 2em;
+  margin: 2em 0;
+}
+
+/*<-- Cards residents -->*/
+.container__cards {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5em;
+  max-width: 900px;
+  margin: auto;
+  padding: 2em 0;
+}
+.image-background {
+  width: 100%;
+  height: 25em;
+  object-fit: cover;
+  object-position: 0 30%;
+}
+
+.my-atropos {
+  width: 20em;
+  height: 32em;
+}
+.container__card-residents {
+  height: 100%;
+  background: var(--cl-card);
+  color: var(--cl-card__text);
+}
+.card-text__span {
+  color: var(--cl-card__text-span);
+  margin: 0 0.4em;
+}
+.card-title {
+  text-align: center;
+  font-size: 1.2em;
+  margin: 0.5em;
+}
+.status-li {
+  display: flex;
+}
+.circle-status {
+  width: 0.6em;
+  height: 0.6em;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  margin: 0.35em;
+  box-shadow: var(--bx-location);
+}
+.status-alive {
+  background: var(--cl-circle-alive);
+}
+.status-dead {
+  background: var(--cl-circle-dead);
+}
+.status-unknown {
+  background: var(--cl-circle-unknown);
+}
+.container__search {
+  position: absolute;
+  width: 100%;
+  top: 35%;
+  text-align: center;
+}
+.search-input {
+  width: 20em;
+  height: 2.7em;
+  aspect-ratio: 1;
+  border: none;
+  border-radius: 0.3em;
+  cursor: pointer;
+}
+.search-button {
+  width: 4em;
+  height: 2.9em;
+  aspect-ratio: 1;
+  margin: 0.5em;
+  border: none;
+  border-radius: 0.3em;
+  cursor: pointer;
+  background: var(--cl-buttom);
+  color: var(--cl-location__text);
+}
+.container__pagination {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 5em 0;
+}
+.pagination-button {
+  border: none;
+  width: 2.5em;
+  aspect-ratio: 1;
+  border-radius: 0.3em;
+  margin: 0.5em;
+  background: var(--cl-buttom-pag);
+  cursor: pointer;
+}
+
+.pagination-button:focus {
+  background: var(--cl-buttom-pag-focus);
+}
+@media (max-width: 900px) {
+  .image-title {
+    width: 20em;
+  }
+  .location-content {
+    gap: 0.5em;
+    margin: 2em 1em;
+  }
+}
