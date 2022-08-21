@@ -154,6 +154,7 @@ li {
   border: none;
   border-radius: 0.3em;
   cursor: pointer;
+  text-indent: 0.3em;
 }
 .search-button {
   width: 4em;
@@ -181,10 +182,13 @@ li {
   background: var(--cl-buttom-pag);
   cursor: pointer;
 }
-
+.classcheked:checked {
+  background: var(--cl-buttom-pag-focus);
+}
 .pagination-button:focus {
   background: var(--cl-buttom-pag-focus);
 }
+
 @media (max-width: 900px) {
   .image-title {
     width: 20em;
